@@ -103,7 +103,8 @@ public class DmmUser {
     @ApiModelProperty(value = "用户账号状态 0:停用 1:启用")
 	private Integer userStatus;
 	/**	-1:删除 1:有效*/
-	@Excel(name = "	-1:删除 1:有效", width = 15)
+	@Excel(name = "	-1:删除 1:有效", width = 15,dicCode="data_status")
+	@Dict(dicCode = "data_status")
     @ApiModelProperty(value = "	-1:删除 1:有效")
 	private Integer dataFlag;
 	/**创建时间*/

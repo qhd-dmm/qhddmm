@@ -12,6 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.jeecg.common.aspect.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
@@ -37,7 +38,8 @@ public class DmmTags {
     @ApiModelProperty(value = "标签内容")
 	private String content;
 	/**删除标志 */
-	@Excel(name = "删除标志 ", width = 15)
+	@Excel(name = "删除标志 ", width = 15,dicCode="data_status")
+	@Dict(dicCode = "data_status")
     @ApiModelProperty(value = "删除标志 ")
 	private Integer dataFlag;
 	/**创建人*/
