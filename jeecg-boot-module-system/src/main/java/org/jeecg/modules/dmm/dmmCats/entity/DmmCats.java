@@ -41,8 +41,8 @@ public class DmmCats {
 	@Excel(name = "猫咪名称", width = 15)
     @ApiModelProperty(value = "猫咪名称")
 	private String name;
-	/**猫咪公母   0未知  1公  2母*/
-	@Excel(name = "猫咪公母  1公  2母", width = 15, dicCode="sex")
+	/**猫咪公母*/
+	@Excel(name = "猫咪公母", width = 15, dicCode="sex")
 	@Dict(dicCode = "sex")
     @ApiModelProperty(value = "猫咪公母   0未知  1公  2母")
 	private Integer sex;
@@ -56,8 +56,8 @@ public class DmmCats {
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(value = "出生日期")
 	private Date birthday;
-	/**猫咪描述(疫苗情况，血统情况以及其他情况描述 )*/
-	@Excel(name = "猫咪描述(疫苗情况，血统情况以及其他情况描述 )", width = 15)
+	/**猫咪描述*/
+	@Excel(name = "猫咪描述", width = 15)
     @ApiModelProperty(value = "猫咪描述(疫苗情况，血统情况以及其他情况描述 )")
 	private String description;
 	/**猫咪分类id*/
@@ -72,8 +72,8 @@ public class DmmCats {
 	@Excel(name = "所属供应商id", width = 15)
     @ApiModelProperty(value = "所属供应商id")
 	private String belongingSupplierId;
-	/**删除标识  -1删除   1未删除*/
-	@Excel(name = "删除标识  -1删除   1未删除", width = 15,dicCode="data_status")
+	/**删除标识*/
+	@Excel(name = "删除标识", width = 15,dicCode="data_status")
 	@Dict(dicCode = "data_status")
     @ApiModelProperty(value = "删除标识  -1删除   1未删除")
 	private Integer dataStatus;

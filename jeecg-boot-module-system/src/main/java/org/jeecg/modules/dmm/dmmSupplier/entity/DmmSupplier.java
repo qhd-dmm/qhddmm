@@ -62,18 +62,18 @@ public class DmmSupplier {
 	@Excel(name = "供应商登陆密码", width = 15)
     @ApiModelProperty(value = "供应商登陆密码")
 	private String loginPwd;
-	/**供应商类型   1.活体 2.食品用品  3服务商*/
-	@Excel(name = "供应商类型   1.活体 2.食品用品  3服务商", width = 15,dicCode="supplier_type")
+	/**供应商类型*/
+	@Excel(name = "供应商类型", width = 15,dicCode="supplier_type")
 	@Dict(dicCode = "supplier_type")
     @ApiModelProperty(value = "供应商类型   1.活体 2.食品用品  3服务商")
 	private Integer supplierType;
-	/**是否合格   0不合格   1合格*/
-	@Excel(name = "是否合格   0不合格   1合格", width = 15,dicCode="qualified_status")
+	/**是否合格*/
+	@Excel(name = "是否合格", width = 15,dicCode="qualified_status")
 	@Dict(dicCode = "qualified_status")
     @ApiModelProperty(value = "是否合格   0不合格   1合格")
 	private Integer qualifiedStatus;
-	/**删除标志    -1已删除   1未删除*/
-	@Excel(name = "删除标志    -1已删除   1未删除", width = 15,dicCode="date_status")
+	/**删除标志*/
+	@Excel(name = "删除标志", width = 15,dicCode="date_status")
 	@Dict(dicCode = "date_status")
     @ApiModelProperty(value = "删除标志    -1已删除   1未删除")
 	private Integer dateStatus;

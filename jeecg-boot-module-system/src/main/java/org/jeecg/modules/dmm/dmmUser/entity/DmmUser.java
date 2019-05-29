@@ -41,8 +41,8 @@ public class DmmUser {
 	@Excel(name = "密码", width = 15)
     @ApiModelProperty(value = "密码")
 	private String loginPwd;
-	/**0保密  1男 2女*/
-	@Excel(name = "0保密  1男 2女", width = 15,dicCode="sex")
+	/**性别*/
+	@Excel(name = "性别", width = 15,dicCode="sex")
 	@Dict(dicCode = "sex")
     @ApiModelProperty(value = "0保密  1男 2女")
 	private Integer userSex;
@@ -80,13 +80,13 @@ public class DmmUser {
 	@Excel(name = "用户编号", width = 15)
     @ApiModelProperty(value = "用户编号")
 	private String userCode;
-	/**收入水平(1:0-2000    2:2000-5000   3:5000-1w   4:1w+)*/
-	@Excel(name = "收入水平(1:0-2000    2:2000-5000   3:5000-1w   4:1w+)", width = 15,dicCode="income")
+	/**收入水平*/
+	@Excel(name = "收入水平", width = 15,dicCode="income")
 	@Dict(dicCode = "income")
     @ApiModelProperty(value = "收入水平(1:0-2000    2:2000-5000   3:5000-1w   4:1w+)")
 	private Integer income;
-	/**职业 1.学生 2白领 3个体*/
-	@Excel(name = "职业 1.学生 2白领 3个体", width = 15)
+	/**职业*/
+	@Excel(name = "职业", width = 15)
     @ApiModelProperty(value = "职业 1.学生 2白领 3个体")
 	private Integer profession;
 	/**推荐人id*/
@@ -97,13 +97,13 @@ public class DmmUser {
 	@Excel(name = "会员等级id", width = 15)
     @ApiModelProperty(value = "会员等级id")
 	private String rankId;
-	/**用户账号状态 0:停用 1:启用*/
-	@Excel(name = "用户账号状态 0:停用 1:启用", width = 15,dicCode="enable_status")
+	/**用户账号状态*/
+	@Excel(name = "用户账号状态", width = 15,dicCode="enable_status")
 	@Dict(dicCode = "enable_status")
     @ApiModelProperty(value = "用户账号状态 0:停用 1:启用")
 	private Integer userStatus;
-	/**	-1:删除 1:有效*/
-	@Excel(name = "	-1:删除 1:有效", width = 15,dicCode="data_status")
+	/**删除标志*/
+	@Excel(name = "删除标志", width = 15,dicCode="data_status")
 	@Dict(dicCode = "data_status")
     @ApiModelProperty(value = "	-1:删除 1:有效")
 	private Integer dataFlag;

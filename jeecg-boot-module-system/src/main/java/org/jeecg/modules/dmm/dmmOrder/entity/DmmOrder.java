@@ -99,8 +99,8 @@ public class DmmOrder {
 	@Excel(name = "所得积分", width = 15)
     @ApiModelProperty(value = "所得积分")
 	private Integer orderScore;
-	/**是否需要发票   1:需要 0:不需要*/
-	@Excel(name = "是否需要发票   1:需要 0:不需要", width = 15)
+	/**是否需要发票*/
+	@Excel(name = "是否需要发票", width = 15)
     @ApiModelProperty(value = "是否需要发票   1:需要 0:不需要")
 	private Integer isInvoice;
 	/**发票抬头*/

@@ -48,8 +48,8 @@ public class DmmService {
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(value = "有效期结束")
 	private Date timeEnd;
-	/**1启用    -1无效*/
-	@Excel(name = "1启用    -1无效", width = 15)
+	/**启停用*/
+	@Excel(name = "启停用", width = 15)
     @ApiModelProperty(value = "1启用    -1无效")
 	private Integer deleteFlag;
 	/**服务名称*/

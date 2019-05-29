@@ -53,8 +53,8 @@ public class DmmUserRank {
 	@Excel(name = "用户等级图标", width = 15)
     @ApiModelProperty(value = "用户等级图标")
 	private String userrankImg;
-	/** 删除标志 -1:删除 1:有效*/
-	@Excel(name = " 删除标志 -1:删除 1:有效", width = 15,dicCode="data_status")
+	/** 删除标志*/
+	@Excel(name = " 删除标志", width = 15,dicCode="data_status")
 	@Dict(dicCode = "data_status")
     @ApiModelProperty(value = " 删除标志 -1:删除 1:有效")
 	private Integer dataFlag;
