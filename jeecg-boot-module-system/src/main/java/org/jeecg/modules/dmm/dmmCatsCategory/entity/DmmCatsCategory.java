@@ -12,6 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.jeecg.common.aspect.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
@@ -44,13 +45,15 @@ public class DmmCatsCategory {
 	@Excel(name = "分类排序号", width = 15)
     @ApiModelProperty(value = "分类排序号")
 	private Integer catSort;
-	/**删除标识   -1删除   1未删除*/
-	@Excel(name = "删除标识   -1删除   1未删除", width = 15)
+	/**删除标识*/
+	@Excel(name = "删除标识", width = 15,dicCode="data_status")
+	@Dict(dicCode = "data_status")
     @ApiModelProperty(value = "删除标识   -1删除   1未删除")
 	private Integer dataStatus;
-	/** 0隐藏     1显示*/
-	@Excel(name = " 0隐藏     1显示", width = 15)
-    @ApiModelProperty(value = " 0隐藏     1显示")
+	/**显示状态*/
+	@Excel(name = "显示状态", width = 15,dicCode="is_show")
+	@Dict(dicCode = "is_show")
+    @ApiModelProperty(value = " 0隐藏 1显示")
 	private Integer isShow;
 	/**分类描述*/
 	@Excel(name = "分类描述", width = 15)

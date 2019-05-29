@@ -12,6 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.jeecg.common.aspect.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
@@ -36,8 +37,9 @@ public class DmmOrderBill {
 	@Excel(name = "订单表", width = 15)
     @ApiModelProperty(value = "订单表")
 	private String orderId;
-	/**清单类型(1.活体  2.商品   3.服务   4.套餐 )*/
-	@Excel(name = "清单类型(1.活体  2.商品   3.服务   4.套餐 )", width = 15)
+	/**清单类型*/
+	@Excel(name = "清单类型", width = 15,dicCode="bill_type")
+	@Dict(dicCode = "bill_type")
     @ApiModelProperty(value = "清单类型(1.活体  2.商品   3.服务   4.套餐 )")
 	private Integer billType;
 	/**是否赠礼*/
@@ -64,8 +66,9 @@ public class DmmOrderBill {
 	@Excel(name = "清单备注", width = 15)
     @ApiModelProperty(value = "清单备注")
 	private String billRemarks;
-	/**0.未发生退款       1.退款中       2退款完成*/
-	@Excel(name = "0.未发生退款       1.退款中       2退款完成", width = 15)
+	/**退款状态*/
+	@Excel(name = "退款状态", width = 15,dicCode="refund_status")
+	@Dict(dicCode = "refund_status")
     @ApiModelProperty(value = "0.未发生退款       1.退款中       2退款完成")
 	private Integer refundStatus;
 	/**创建人*/

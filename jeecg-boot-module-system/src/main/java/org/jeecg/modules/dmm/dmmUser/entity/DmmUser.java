@@ -12,6 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.jeecg.common.aspect.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
@@ -41,7 +42,8 @@ public class DmmUser {
     @ApiModelProperty(value = "密码")
 	private String loginPwd;
 	/**0保密  1男 2女*/
-	@Excel(name = "0保密  1男 2女", width = 15)
+	@Excel(name = "0保密  1男 2女", width = 15,dicCode="sex")
+	@Dict(dicCode = "sex")
     @ApiModelProperty(value = "0保密  1男 2女")
 	private Integer userSex;
 	/**昵称*/
@@ -79,7 +81,8 @@ public class DmmUser {
     @ApiModelProperty(value = "用户编号")
 	private String userCode;
 	/**收入水平(1:0-2000    2:2000-5000   3:5000-1w   4:1w+)*/
-	@Excel(name = "收入水平(1:0-2000    2:2000-5000   3:5000-1w   4:1w+)", width = 15)
+	@Excel(name = "收入水平(1:0-2000    2:2000-5000   3:5000-1w   4:1w+)", width = 15,dicCode="income")
+	@Dict(dicCode = "income")
     @ApiModelProperty(value = "收入水平(1:0-2000    2:2000-5000   3:5000-1w   4:1w+)")
 	private Integer income;
 	/**职业 1.学生 2白领 3个体*/
@@ -95,7 +98,8 @@ public class DmmUser {
     @ApiModelProperty(value = "会员等级id")
 	private String rankId;
 	/**用户账号状态 0:停用 1:启用*/
-	@Excel(name = "用户账号状态 0:停用 1:启用", width = 15)
+	@Excel(name = "用户账号状态 0:停用 1:启用", width = 15,dicCode="enable_status")
+	@Dict(dicCode = "enable_status")
     @ApiModelProperty(value = "用户账号状态 0:停用 1:启用")
 	private Integer userStatus;
 	/**	-1:删除 1:有效*/

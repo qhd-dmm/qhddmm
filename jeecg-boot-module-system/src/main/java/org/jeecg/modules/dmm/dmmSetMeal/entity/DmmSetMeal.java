@@ -12,6 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.jeecg.common.aspect.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
@@ -44,8 +45,9 @@ public class DmmSetMeal {
 	@Excel(name = "折后总价", width = 15)
     @ApiModelProperty(value = "折后总价")
 	private java.math.BigDecimal realAmount;
-	/**1启用   -1停用*/
-	@Excel(name = "1启用   -1停用", width = 15)
+	/**启停用*/
+	@Excel(name = "启停用", width = 15,dicCode="enable_status")
+	@Dict(dicCode = "enable_status")
     @ApiModelProperty(value = "1启用   -1停用")
 	private Integer dataFlag;
 	/**创建人*/

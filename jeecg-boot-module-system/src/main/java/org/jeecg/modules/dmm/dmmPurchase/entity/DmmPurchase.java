@@ -12,6 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.jeecg.common.aspect.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
@@ -32,12 +33,14 @@ public class DmmPurchase {
 	@TableId(type = IdType.UUID)
     @ApiModelProperty(value = "主键")
 	private String id;
-	/**采购类型(1.订单采购  2.公司日常采购   3.固定资产采购)*/
-	@Excel(name = "采购类型(1.订单采购  2.公司日常采购   3.固定资产采购)", width = 15)
+	/**采购类型*/
+	@Excel(name = "采购类型", width = 15,dicCode="purchase_type")
+	@Dict(dicCode = "purchase_type")
     @ApiModelProperty(value = "采购类型(1.订单采购  2.公司日常采购   3.固定资产采购)")
 	private Integer purchaseType;
-	/**采购状态(1.已申请   2.已到货    3已核销)*/
-	@Excel(name = "采购状态(1.已申请   2.已到货    3已核销)", width = 15)
+	/**采购状态*/
+	@Excel(name = "采购状态", width = 15,dicCode="purchase_status")
+	@Dict(dicCode = "purchase_status")
     @ApiModelProperty(value = "采购状态(1.已申请   2.已到货    3已核销)")
 	private Integer purchaseStatus;
 	/**采购单合计价格*/

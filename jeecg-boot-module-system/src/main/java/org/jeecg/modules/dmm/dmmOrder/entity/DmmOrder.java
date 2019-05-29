@@ -12,6 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.jeecg.common.aspect.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
@@ -32,12 +33,14 @@ public class DmmOrder {
 	@TableId(type = IdType.UUID)
     @ApiModelProperty(value = "订单(商品)主键")
 	private String id;
-	/**订单状态(1.待付款  2.待发货  3.待收货   4.交易完成  5.交易关闭)*/
-	@Excel(name = "订单状态(1.待付款  2.待发货  3.待收货   4.交易完成  5.交易关闭)", width = 15)
+	/**订单状态*/
+	@Excel(name = "订单状态", width = 15,dicCode="order_status")
+	@Dict(dicCode = "order_status")
     @ApiModelProperty(value = "订单状态(1.待付款  2.待发货  3.待收货   4.交易完成  5.交易关闭)")
 	private Integer orderStatus;
-	/**收货方式	0:送货上门 1:自提*/
-	@Excel(name = "收货方式	0:送货上门 1:自提", width = 15)
+	/**收货方式*/
+	@Excel(name = "收货方式", width = 15,dicCode="deliver_type")
+	@Dict(dicCode = "deliver_type")
     @ApiModelProperty(value = "收货方式	0:送货上门 1:自提")
 	private Integer deliverType;
 	/**客户id*/
@@ -52,28 +55,32 @@ public class DmmOrder {
 	@Excel(name = "运费", width = 15)
     @ApiModelProperty(value = "运费")
 	private java.math.BigDecimal deliverMoney;
-	/**订单总金额  包括运费*/
-	@Excel(name = "订单总金额  包括运费", width = 15)
+	/**订单总金额*/
+	@Excel(name = "订单总金额", width = 15)
     @ApiModelProperty(value = "订单总金额  包括运费")
 	private java.math.BigDecimal totalMoney;
-	/**实际订单总金额 进行各种折扣之后的金额*/
-	@Excel(name = "实际订单总金额 进行各种折扣之后的金额", width = 15)
+	/**实际订单总金额*/
+	@Excel(name = "实际订单总金额", width = 15)
     @ApiModelProperty(value = "实际订单总金额 进行各种折扣之后的金额")
 	private java.math.BigDecimal realTotalMoney;
-	/**支付方式  0:货到付款 1:先款后货*/
-	@Excel(name = "支付方式  0:货到付款 1:先款后货", width = 15)
+	/**支付方式*/
+	@Excel(name = "支付方式  0:货到付款 1:先款后货", width = 15,dicCode="pay_type")
+	@Dict(dicCode = "pay_type")
     @ApiModelProperty(value = "支付方式  0:货到付款 1:先款后货")
 	private Integer payType;
-	/**支付来源  1:现金，2：支付宝  3微信*/
-	@Excel(name = "支付来源  1:现金，2：支付宝  3微信", width = 15)
+	/**支付来源*/
+	@Excel(name = "支付来源  1:现金，2：支付宝  3微信", width = 15,dicCode="pay_from")
+	@Dict(dicCode = "pay_from")
     @ApiModelProperty(value = "支付来源  1:现金，2：支付宝  3微信")
 	private Integer payFrom;
-	/**是否支付定金 0:未支付 1:已支付*/
-	@Excel(name = "是否支付定金 0:未支付 1:已支付", width = 15)
+	/**是否支付定金*/
+	@Excel(name = "是否支付定金 0:未支付 1:已支付", width = 15,dicCode="is_pay_front")
+	@Dict(dicCode = "is_pay_front")
     @ApiModelProperty(value = "是否支付定金 0:未支付 1:已支付")
 	private Integer isPayFront;
-	/**是否支付尾款	0:未支付 1:已支付*/
-	@Excel(name = "是否支付尾款	0:未支付 1:已支付", width = 15)
+	/**是否支付尾款*/
+	@Excel(name = "是否支付尾款", width = 15,dicCode="is_pay_all")
+	@Dict(dicCode = "is_pay_all")
     @ApiModelProperty(value = "是否支付尾款	0:未支付 1:已支付")
 	private Integer isPayAll;
 	/**收货人姓名*/
@@ -100,8 +107,9 @@ public class DmmOrder {
 	@Excel(name = "发票抬头", width = 15)
     @ApiModelProperty(value = "发票抬头")
 	private String invoiceClient;
-	/**订单来源	0:门店 1:微信*/
-	@Excel(name = "订单来源	0:门店 1:微信", width = 15)
+	/**订单来源*/
+	@Excel(name = "订单来源", width = 15,dicCode="order_src")
+	@Dict(dicCode = "order_src")
     @ApiModelProperty(value = "订单来源	0:门店 1:微信")
 	private Integer orderSrc;
 	/**收货时间*/
@@ -116,7 +124,7 @@ public class DmmOrder {
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(value = "发货时间")
 	private Date deliveryTime;
-	/**订单描述(针对于发猫前的进展信息)*/
+	/**订单描述*/
 	@Excel(name = "订单描述(针对于发猫前的进展信息)", width = 15)
     @ApiModelProperty(value = "订单描述(针对于发猫前的进展信息)")
 	private String orderDescription;
@@ -128,8 +136,9 @@ public class DmmOrder {
 	@Excel(name = "所属员工id", width = 15)
     @ApiModelProperty(value = "所属员工id")
 	private Integer staffId;
-	/**0.未发生退款       1.退款中       2退款完成*/
-	@Excel(name = "0.未发生退款       1.退款中       2退款完成", width = 15)
+	/**退款状态*/
+	@Excel(name = "退款状态", width = 15,dicCode="refund_status")
+	@Dict(dicCode = "refund_status")
     @ApiModelProperty(value = "0.未发生退款       1.退款中       2退款完成")
 	private Integer refundStatus;
 	/**快递公司ID*/
@@ -140,8 +149,9 @@ public class DmmOrder {
 	@Excel(name = "快递号", width = 15)
     @ApiModelProperty(value = "快递号")
 	private String expressNo;
-	/**是否包含套餐 1是  -1不是*/
-	@Excel(name = "是否包含套餐 1是  -1不是", width = 15)
+	/**是否含套餐 */
+	@Excel(name = "是否含套餐", width = 15,dicCode="if_set_meal")
+	@Dict(dicCode = "if_set_meal")
     @ApiModelProperty(value = "是否包含套餐 1是  -1不是")
 	private Integer ifSetMeal;
 	/**创建人*/

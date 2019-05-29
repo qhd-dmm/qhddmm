@@ -12,6 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.jeecg.common.aspect.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
@@ -41,7 +42,8 @@ public class DmmCats {
     @ApiModelProperty(value = "猫咪名称")
 	private String name;
 	/**猫咪公母   0未知  1公  2母*/
-	@Excel(name = "猫咪公母   0未知  1公  2母", width = 15)
+	@Excel(name = "猫咪公母  1公  2母", width = 15, dicCode="sex")
+	@Dict(dicCode = "sex")
     @ApiModelProperty(value = "猫咪公母   0未知  1公  2母")
 	private Integer sex;
 	/**体重(kg)*/
@@ -71,7 +73,8 @@ public class DmmCats {
     @ApiModelProperty(value = "所属供应商id")
 	private String belongingSupplierId;
 	/**删除标识  -1删除   1未删除*/
-	@Excel(name = "删除标识  -1删除   1未删除", width = 15)
+	@Excel(name = "删除标识  -1删除   1未删除", width = 15,dicCode="data_status")
+	@Dict(dicCode = "data_status")
     @ApiModelProperty(value = "删除标识  -1删除   1未删除")
 	private Integer dataStatus;
 	/**创建人*/

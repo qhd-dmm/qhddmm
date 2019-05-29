@@ -12,6 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.jeecg.common.aspect.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
@@ -72,21 +73,23 @@ public class DmmGoods {
 	@Excel(name = "促销信息", width = 15)
     @ApiModelProperty(value = "促销信息")
 	private Object goodsTips;
-	/**是否上架	0:不上架 1:上架*/
-	@Excel(name = "是否上架	0:不上架 1:上架", width = 15)
+	/**是否上架*/
+	@Excel(name = "是否上架", width = 15,dicCode="is_sale")
+	@Dict(dicCode = "is_sale")
     @ApiModelProperty(value = "是否上架	0:不上架 1:上架")
 	private Integer isSale;
-	/**是否热销产品	0:否 1:是*/
-	@Excel(name = "是否热销产品	0:否 1:是", width = 15)
+	/**是否热销产品*/
+	@Excel(name = "是否热销产品", width = 15,dicCode="is_hot")
+	@Dict(dicCode = "is_hot")
     @ApiModelProperty(value = "是否热销产品	0:否 1:是")
 	private Integer isHot;
 	/**商品分类ID路径*/
 	@Excel(name = "商品分类ID路径", width = 15)
     @ApiModelProperty(value = "商品分类ID路径")
 	private String goodsCatPath;
-	/**最后一级商品分类ID	*/
+	/**最后一级商品分类ID*/
 	@Excel(name = "最后一级商品分类ID	", width = 15)
-    @ApiModelProperty(value = "最后一级商品分类ID	")
+    @ApiModelProperty(value = "最后一级商品分类ID")
 	private Integer goodsCatId;
 	/**品牌Id*/
 	@Excel(name = "品牌Id", width = 15)
@@ -96,8 +99,9 @@ public class DmmGoods {
 	@Excel(name = "商品描述	", width = 15)
     @ApiModelProperty(value = "商品描述	")
 	private String goodsDesc;
-	/**商品状态	-1:违规 0:未审核 1:已审核*/
-	@Excel(name = "商品状态	-1:违规 0:未审核 1:已审核", width = 15)
+	/**商品状态*/
+	@Excel(name = "商品状态", width = 15,dicCode="goods_status")
+	@Dict(dicCode = "goods_status")
     @ApiModelProperty(value = "商品状态	-1:违规 0:未审核 1:已审核")
 	private Integer goodsStatus;
 	/**总销售量*/
@@ -110,8 +114,9 @@ public class DmmGoods {
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(value = "上架时间")
 	private Date saleTime;
-	/**删除标志	-1:删除 1:有效*/
-	@Excel(name = "删除标志	-1:删除 1:有效", width = 15)
+	/**删除标志*/
+	@Excel(name = "删除标志", width = 15,dicCode="data_status")
+	@Dict(dicCode = "data_status")
     @ApiModelProperty(value = "删除标志	-1:删除 1:有效")
 	private Integer dataStatus;
 	/**创建人*/

@@ -12,6 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.jeecg.common.aspect.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
@@ -48,8 +49,9 @@ public class DmmSupplier {
 	@Excel(name = "供应商地址", width = 15)
     @ApiModelProperty(value = "供应商地址")
 	private String address;
-	/**供应商状态    0停用  1启用*/
-	@Excel(name = "供应商状态    0停用  1启用", width = 15)
+	/**启停用*/
+	@Excel(name = "启停用", width = 15,dicCode="enable_status")
+	@Dict(dicCode = "enable_status")
     @ApiModelProperty(value = "供应商状态    0停用  1启用")
 	private Integer supplierStatus;
 	/**供应商登陆名*/
@@ -61,15 +63,18 @@ public class DmmSupplier {
     @ApiModelProperty(value = "供应商登陆密码")
 	private String loginPwd;
 	/**供应商类型   1.活体 2.食品用品  3服务商*/
-	@Excel(name = "供应商类型   1.活体 2.食品用品  3服务商", width = 15)
+	@Excel(name = "供应商类型   1.活体 2.食品用品  3服务商", width = 15,dicCode="supplier_type")
+	@Dict(dicCode = "supplier_type")
     @ApiModelProperty(value = "供应商类型   1.活体 2.食品用品  3服务商")
 	private Integer supplierType;
 	/**是否合格   0不合格   1合格*/
-	@Excel(name = "是否合格   0不合格   1合格", width = 15)
+	@Excel(name = "是否合格   0不合格   1合格", width = 15,dicCode="qualified_status")
+	@Dict(dicCode = "qualified_status")
     @ApiModelProperty(value = "是否合格   0不合格   1合格")
 	private Integer qualifiedStatus;
 	/**删除标志    -1已删除   1未删除*/
-	@Excel(name = "删除标志    -1已删除   1未删除", width = 15)
+	@Excel(name = "删除标志    -1已删除   1未删除", width = 15,dicCode="date_status")
+	@Dict(dicCode = "date_status")
     @ApiModelProperty(value = "删除标志    -1已删除   1未删除")
 	private Integer dateStatus;
 	/**创建人*/
